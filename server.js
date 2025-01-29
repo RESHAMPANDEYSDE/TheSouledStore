@@ -4,14 +4,14 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 
-// Create Express app
+
 const app = express();
 const port = 5500;
 
-// Middleware to parse JSON bodies
+
 app.use(bodyParser.json());
 
-// MySQL database connection
+
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -19,7 +19,7 @@ const db = mysql.createConnection({
   database: 'souled_store' 
 });
 
-// Connect to MySQL
+
 db.connect((err) => {
   if (err) {
     console.error('Error connecting to database:', err);
@@ -28,11 +28,11 @@ db.connect((err) => {
   console.log('Connected to the MySQL database!');
 });
 
-// Register a new user
+
 app.post('/register', (req, res) => {
   const { full_name, email, password, phone_number } = req.body;
 
-  // Validate input
+ 
   if (!full_name || !email || !password) {
     return res.status(400).json({ message: 'All fields except phone number are required.' });
   }
@@ -49,11 +49,11 @@ app.post('/register', (req, res) => {
   });
 });
 
-// Login a user
+
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
 
-  // Validate input
+
   if (!email || !password) {
     return res.status(400).json({ message: 'Email and password are required.' });
   }
@@ -68,7 +68,7 @@ app.post('/login', (req, res) => {
     bcrypt.compare(password, user.password, (err, isMatch) => {
       if (err || !isMatch) return res.status(400).json({ message: 'Invalid email or password.' });
 
-      // Generate JWT token for authentication
+     
       const token = jwt.sign({ userId: user.id }, 'your_jwt_secret_key', { expiresIn: '1h' });
 
       res.json({
