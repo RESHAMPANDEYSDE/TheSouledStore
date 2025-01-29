@@ -15,8 +15,8 @@ app.use(bodyParser.json());
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'root', // Replace with your password
-  database: 'souled_store' // Replace with your DB name
+  password: 'root', 
+  database: 'souled_store' 
 });
 
 // Connect to MySQL
@@ -37,7 +37,7 @@ app.post('/register', (req, res) => {
     return res.status(400).json({ message: 'All fields except phone number are required.' });
   }
 
-  // Hash password before storing in database
+  
   bcrypt.hash(password, 10, (err, hashedPassword) => {
     if (err) return res.status(500).json({ message: 'Error hashing password.' });
 
@@ -64,7 +64,7 @@ app.post('/login', (req, res) => {
 
     const user = result[0];
 
-    // Compare entered password with stored hashed password
+   
     bcrypt.compare(password, user.password, (err, isMatch) => {
       if (err || !isMatch) return res.status(400).json({ message: 'Invalid email or password.' });
 
@@ -83,7 +83,6 @@ app.post('/login', (req, res) => {
   });
 });
 
-// Add sample product
 app.post('/add-product', (req, res) => {
   const { name, description, price, image_url, category } = req.body;
 
