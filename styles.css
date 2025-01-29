@@ -1,4 +1,4 @@
-/* Reset Default Styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -8,10 +8,10 @@
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f9f9f9;
-  margin: 0 20px; /* Adds margin to the left and right of the page */
+  margin: 0 20px; 
 }
 
-/* Header Styling */
+
 header {
   background-color: #333;
   padding: 1rem;
@@ -53,7 +53,7 @@ header {
   cursor: pointer;
 }
 
-/* Separate Login and Cart */
+
 .user-options {
   margin-right: 15px;
 }
@@ -69,7 +69,7 @@ header {
   padding: 0.5rem 1rem;
 }
 
-/* Cart Icon Styling */
+
 .cart-link {
   display: flex;
   align-items: center;
@@ -143,7 +143,7 @@ header {
   background-color: #218838;
 }
 
-/* Media Queries for Responsive Design */
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -168,7 +168,6 @@ header {
   }
 }
 
-/* Login Form Wrapper */
 .login-container {
   position: relative;
   background-color: #fff;
@@ -182,7 +181,7 @@ header {
   text-align: center;
 }
 
-/* Creating the middle square bracket-like effect */
+
 .login-container::before,
 .login-container::after {
   content: "";
@@ -190,40 +189,39 @@ header {
   top: 0;
   width: 20px;
   height: 100%;
-  background-color: #2575fc; /* Blue color for the bracket */
+  background-color: #2575fc; 
   border-radius: 10px;
 }
 
 .login-container::before {
-  left: -30px; /* Move the left bracket to the left */
+  left: -30px; 
 }
 
 .login-container::after {
-  right: -30px; /* Move the right bracket to the right */
+  right: -30px; 
 }
 
-/* Title Style */
+
 h1 {
   color: #333;
   font-size: 2rem;
   margin-bottom: 1.5rem;
 }
 
-/* Form Style */
+
 form {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
 }
 
-/* Label Style */
+
 label {
   font-weight: bold;
   color: #333;
   font-size: 1rem;
 }
 
-/* Input Field Style */
 input {
   padding: 0.8rem;
   border-radius: 5px;
@@ -233,14 +231,14 @@ input {
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Input Field Focus Effect */
+
 input:focus {
   outline: none;
   border-color: #2575fc;
   box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
 }
 
-/* Error Messages Styling */
+
 .error-message {
   color: red;
   font-size: 0.875rem;
@@ -248,7 +246,7 @@ input:focus {
   margin-bottom: 10px;
 }
 
-/* Submit Button Style */
+
 button {
   background-color: #28a745;
   color: white;
@@ -261,12 +259,12 @@ button {
   margin-top: 1rem;
 }
 
-/* Button Hover Effect */
+
 button:hover {
   background-color: #218838;
 }
 
-/* Register Link Style */
+
 p {
   text-align: center;
   color: #333;
